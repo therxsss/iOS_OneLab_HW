@@ -147,7 +147,6 @@ class ViewController: UIViewController {
     }
     
     func setUpSettings(){
-        // setup of head body
         let gesture = UITapGestureRecognizer()
         gesture.addTarget(self, action: #selector(didTapChangeProfilePic))
         bluePhoto.addGestureRecognizer(gesture)
@@ -182,17 +181,16 @@ class ViewController: UIViewController {
         
         headerView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(130)
             $0.top.equalTo(profilePhoto.snp.bottom).offset(15)
+            $0.left.equalToSuperview().inset(130)
         }
         
         headerView.addSubview(emailLabel)
         emailLabel.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(115)
             $0.top.equalTo(nameLabel.snp.bottom).offset(4)
+            $0.left.equalToSuperview().inset(115)
         }
         
-        //setup of list of settings
         
         view.addSubview(table)
         table.snp.makeConstraints {

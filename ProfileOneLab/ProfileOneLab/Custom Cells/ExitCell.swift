@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ExitTableViewCell: UITableViewCell {
+class ExitCell: UITableViewCell {
     static let identifier = "ExitTableViewCell"
     
     let label: UILabel = {
