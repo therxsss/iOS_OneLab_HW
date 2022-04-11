@@ -17,7 +17,7 @@
 		B561E58D2809C7FC0025B31C /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */; };
 		B561E58E2809C7FC0025B31C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */; };
 		B561E58F2809C7FC0025B31C /* ExitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58C2809C7FC0025B31C /* ExitTableViewCell.swift */; };
-		B561E5912809C7FC0025B31C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E5902809C7FC0025B31C /* ChangePasswordViewController.swift */; };
+		B561E5912809C7FC0025B31C /* PasswordChangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E5902809C7FC0025B31C /* PasswordChangeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +31,10 @@
 		B561E57D2809C7FC0025B31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B561E5802809C7FC0025B31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B561E5822809C7FC0025B31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconTableViewCell.swift; path = TableViewCells/IconTableViewCell.swift; sourceTree = "<group>"; };
-		B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchTableViewCell.swift; path = TableViewCells/SwitchTableViewCell.swift; sourceTree = "<group>"; };
-		B561E58C2809C7FC0025B31C /* ExitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExitTableViewCell.swift; path = TableViewCells/ExitTableViewCell.swift; sourceTree = "<group>"; };
-		B561E5902809C7FC0025B31C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
+		B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		B561E58C2809C7FC0025B31C /* ExitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
+		B561E5902809C7FC0025B31C /* PasswordChangeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangeVC.swift; sourceTree = "<group>"; };
 		DCDB31B7024797C484282A27 /* Pods-ProfileOneLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileOneLab.release.xcconfig"; path = "Target Support Files/Pods-ProfileOneLab/Pods-ProfileOneLab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,17 +90,33 @@
 			children = (
 				B561E5742809C7FC0025B31C /* AppDelegate.swift */,
 				B561E5762809C7FC0025B31C /* SceneDelegate.swift */,
-				B561E5782809C7FC0025B31C /* ViewController.swift */,
-				B561E5902809C7FC0025B31C /* ChangePasswordViewController.swift */,
-				B561E58C2809C7FC0025B31C /* ExitTableViewCell.swift */,
-				B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */,
-				B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */,
+				B561E5922809C7FC0025B31C /* ViewControllers */,
+				B561E5932809C7FC0025B31C /* Custom Cells */,
 				B561E57A2809C7FC0025B31C /* Main.storyboard */,
 				B561E57D2809C7FC0025B31C /* Assets.xcassets */,
 				B561E57F2809C7FC0025B31C /* LaunchScreen.storyboard */,
 				B561E5822809C7FC0025B31C /* Info.plist */,
 			);
 			path = ProfileOneLab;
+			sourceTree = "<group>";
+		};
+		B561E5922809C7FC0025B31C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B561E5782809C7FC0025B31C /* ViewController.swift */,
+				B561E5902809C7FC0025B31C /* PasswordChangeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B561E5932809C7FC0025B31C /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B561E58C2809C7FC0025B31C /* ExitTableViewCell.swift */,
+				B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */,
+				B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +240,7 @@
 				B561E58F2809C7FC0025B31C /* ExitTableViewCell.swift in Sources */,
 				B561E58D2809C7FC0025B31C /* IconTableViewCell.swift in Sources */,
 				B561E5772809C7FC0025B31C /* SceneDelegate.swift in Sources */,
-				B561E5912809C7FC0025B31C /* ChangePasswordViewController.swift in Sources */,
+				B561E5912809C7FC0025B31C /* PasswordChangeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

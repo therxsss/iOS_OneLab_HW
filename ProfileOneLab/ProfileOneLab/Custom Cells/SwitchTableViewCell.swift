@@ -1,8 +1,8 @@
 //
 //  SwitchTableViewCell.swift
-//  profile-acc
+//  ProfileOneLab
 //
-//  Created by Бексултан Нурпейс on 14.04.2022.
+//  Created by Abdurakhman on 11.04.2022.
 //
 
 import UIKit

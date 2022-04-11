@@ -119,7 +119,7 @@ class ViewController: UIViewController {
         models.append(Section(options: [
             .iconCell(model: IconModel(title: "Изменить пароль", icon: UIImage(named: "Arrow"), handler: {
                 print("Change pass")
-                let vc = ChangePasswordViewController()
+                let vc = PasswordChangeVC()
                 vc.navigationItem.largeTitleDisplayMode = .never
                 self.navigationController?.pushViewController(vc, animated: true)
             })),

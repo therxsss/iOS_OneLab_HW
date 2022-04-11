@@ -1,15 +1,15 @@
 //
-//  ChangePasswordViewController.swift
-//  profile-acc
+//  PasswordChangeVC.swift
+//  ProfileOneLab
 //
-//  Created by Бексултан Нурпейс on 14.04.2022.
+//  Created by Abdurakhman on 11.04.2022.
 //
 
 import UIKit
 import SnapKit
 
 
-class ChangePasswordViewController: UIViewController {
+class PasswordChangeVC: UIViewController {
 
     private let currentView: UIView = {
         let view = UIView()
