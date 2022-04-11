@@ -1,0 +1,6 @@
+framework module Pods_ProfileOneLab {
+  umbrella header "Pods-ProfileOneLab-umbrella.h"
+
+  export *
+  module * { export * }
+}
