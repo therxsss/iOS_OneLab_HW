@@ -9,12 +9,13 @@ import UIKit
 import SnapKit
 
 class ExitCell: UITableViewCell {
-    static let identifier = "ExitTableViewCell"
+    
+    static let identifier = "ExitCell"
     
     let label: UILabel = {
        let label = UILabel()
        label.font = UIFont(descriptor: UIFontDescriptor(name: "Montserrat", size: 16), size: 16)
-       label.textColor = UIColor(red: 1, green: 0.317, blue: 0.317, alpha: 1)
+       label.textColor = UIColor(red: 1, green: 0.3, blue: 0.3, alpha: 1)
        return label
    }()
     

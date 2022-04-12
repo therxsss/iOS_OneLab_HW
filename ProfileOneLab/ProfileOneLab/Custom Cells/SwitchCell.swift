@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-class SwitchTableViewCell: UITableViewCell {
+class SwitchCell: UITableViewCell {
 
-    static let identifier = "SwitchTableViewCell"
+    static let identifier = "SwitchCell"
     
     let label: UILabel = {
        let label = UILabel()
        label.font = UIFont(descriptor: UIFontDescriptor(name: "Montserrat", size: 16), size: 16)
-       label.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
+       label.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
        return label
    }()
     
@@ -27,21 +27,21 @@ class SwitchTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
+        configure()
     }
     
-    private func setup(){
+    private func configure(){
         contentView.addSubview(label)
-        label.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(19)
-            $0.top.equalToSuperview().offset(17)
-            $0.bottom.equalToSuperview().inset(19)
+        label.snp.makeConstraints {make in
+            make.top.equalToSuperview().offset(16)
+            make.left.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
         }
         
         contentView.addSubview(mySwitch)
-        mySwitch.snp.makeConstraints {
-            $0.right.equalToSuperview().inset(15)
-            $0.top.equalToSuperview().offset(13)
+        mySwitch.snp.makeConstraints {make in
+            make.top.equalToSuperview().offset(15)
+            make.right.equalToSuperview().inset(16)
         }
         
     }

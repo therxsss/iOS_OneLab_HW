@@ -14,8 +14,8 @@
 		B561E57C2809C7FC0025B31C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B561E57A2809C7FC0025B31C /* Main.storyboard */; };
 		B561E57E2809C7FC0025B31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B561E57D2809C7FC0025B31C /* Assets.xcassets */; };
 		B561E5812809C7FC0025B31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B561E57F2809C7FC0025B31C /* LaunchScreen.storyboard */; };
-		B561E58D2809C7FC0025B31C /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */; };
-		B561E58E2809C7FC0025B31C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */; };
+		B561E58D2809C7FC0025B31C /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58A2809C7FC0025B31C /* IconCell.swift */; };
+		B561E58E2809C7FC0025B31C /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58B2809C7FC0025B31C /* SwitchCell.swift */; };
 		B561E58F2809C7FC0025B31C /* ExitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E58C2809C7FC0025B31C /* ExitCell.swift */; };
 		B561E5912809C7FC0025B31C /* PasswordChangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561E5902809C7FC0025B31C /* PasswordChangeVC.swift */; };
 /* End PBXBuildFile section */
@@ -31,8 +31,8 @@
 		B561E57D2809C7FC0025B31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B561E5802809C7FC0025B31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B561E5822809C7FC0025B31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
-		B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		B561E58A2809C7FC0025B31C /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		B561E58B2809C7FC0025B31C /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		B561E58C2809C7FC0025B31C /* ExitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExitCell.swift; sourceTree = "<group>"; };
 		B561E5902809C7FC0025B31C /* PasswordChangeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangeVC.swift; sourceTree = "<group>"; };
 		DCDB31B7024797C484282A27 /* Pods-ProfileOneLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileOneLab.release.xcconfig"; path = "Target Support Files/Pods-ProfileOneLab/Pods-ProfileOneLab.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				B561E58C2809C7FC0025B31C /* ExitCell.swift */,
-				B561E58A2809C7FC0025B31C /* IconTableViewCell.swift */,
-				B561E58B2809C7FC0025B31C /* SwitchTableViewCell.swift */,
+				B561E58A2809C7FC0025B31C /* IconCell.swift */,
+				B561E58B2809C7FC0025B31C /* SwitchCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -236,9 +236,9 @@
 			files = (
 				B561E5792809C7FC0025B31C /* ViewController.swift in Sources */,
 				B561E5752809C7FC0025B31C /* AppDelegate.swift in Sources */,
-				B561E58E2809C7FC0025B31C /* SwitchTableViewCell.swift in Sources */,
+				B561E58E2809C7FC0025B31C /* SwitchCell.swift in Sources */,
 				B561E58F2809C7FC0025B31C /* ExitCell.swift in Sources */,
-				B561E58D2809C7FC0025B31C /* IconTableViewCell.swift in Sources */,
+				B561E58D2809C7FC0025B31C /* IconCell.swift in Sources */,
 				B561E5772809C7FC0025B31C /* SceneDelegate.swift in Sources */,
 				B561E5912809C7FC0025B31C /* PasswordChangeVC.swift in Sources */,
 			);

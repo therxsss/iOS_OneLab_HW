@@ -14,9 +14,9 @@ class PasswordChangeVC: UIViewController {
     private let currentView: UIView = {
         let view = UIView()
         view.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        view.layer.cornerRadius = 10
+        view.layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 1, alpha: 1).cgColor
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(red: 0.804, green: 0.855, blue: 0.976, alpha: 1).cgColor
+        view.layer.cornerRadius = 10
         return view
     }()
     
@@ -28,7 +28,7 @@ class PasswordChangeVC: UIViewController {
         password.autocorrectionType = UITextAutocorrectionType.no
         password.keyboardType = UIKeyboardType.default
         password.returnKeyType = UIReturnKeyType.done
-        password.textColor = UIColor(red: 0.058, green: 0.058, blue: 0.058, alpha: 1)
+        password.textColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
         return password
     }()
     
@@ -42,7 +42,7 @@ class PasswordChangeVC: UIViewController {
         view.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(red: 0.804, green: 0.855, blue: 0.976, alpha: 1).cgColor
+        view.layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 1, alpha: 1).cgColor
         return view
     }()
     
@@ -54,7 +54,7 @@ class PasswordChangeVC: UIViewController {
         password.autocorrectionType = UITextAutocorrectionType.no
         password.keyboardType = UIKeyboardType.default
         password.returnKeyType = UIReturnKeyType.done
-        password.textColor = UIColor(red: 0.058, green: 0.058, blue: 0.058, alpha: 1)
+        password.textColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
         return password
     }()
     
@@ -68,7 +68,7 @@ class PasswordChangeVC: UIViewController {
         view.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(red: 0.804, green: 0.855, blue: 0.976, alpha: 1).cgColor
+        view.layer.borderColor = UIColor(red: 0.8, green: 0.8, blue: 1, alpha: 1).cgColor
         return view
     }()
     
@@ -80,7 +80,7 @@ class PasswordChangeVC: UIViewController {
         password.autocorrectionType = UITextAutocorrectionType.no
         password.keyboardType = UIKeyboardType.default
         password.returnKeyType = UIReturnKeyType.done
-        password.textColor = UIColor(red: 0.058, green: 0.058, blue: 0.058, alpha: 1)
+        password.textColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
         return password
     }()
     
@@ -93,7 +93,7 @@ class PasswordChangeVC: UIViewController {
         let label = UILabel()
         label.text = "Забыли пароль ?"
         label.font = UIFont(descriptor: UIFontDescriptor(name: "Montserrat", size: 14), size: 14)
-        label.textColor = UIColor(red: 0.229, green: 0.229, blue: 0.229, alpha: 1)
+        label.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         label.attributedText = NSMutableAttributedString(string: "Забыли пароль ?", attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         return label
     }()
@@ -103,21 +103,22 @@ class PasswordChangeVC: UIViewController {
         view.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1).cgColor
+        view.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1).cgColor
         return view
     }()
     
     private let saveButton: UIButton = {
         let button = UIButton()
         button.setTitle("Сохранить", for: .normal)
-        button.setTitleColor(UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1), for: .normal)
+        button.setTitleColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont(name: "Montserrat", size: 20)
+        button.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+        view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         self.navigationItem.title = "Изменить пароль"
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(name: "Montserrat", size: 16), size: 16)]
@@ -126,131 +127,135 @@ class PasswordChangeVC: UIViewController {
 
     
     
-    @objc func passwordView(_ sender: UIButton){
-        (sender ).isSelected = !(sender ).isSelected
+    @objc func currentPasswordVisibility(_ sender: UIButton){
+        (sender ).isSelected = !(sender).isSelected
         if (sender ).isSelected {
             self.currentPassword.isSecureTextEntry = false
-            currentButton.setImage(UIImage(named: "visible"), for: .normal)
-            print("show")
+            currentButton.setImage(UIImage(named: "VisibleMode"), for: .normal)
+            print("Password visible")
         } else {
             self.currentPassword.isSecureTextEntry = true
-            currentButton.setImage(UIImage(named: "invisble"), for: .normal)
-            print("notshow")
+            currentButton.setImage(UIImage(named: "InvisibleMode"), for: .normal)
+            print("Passsword invisible")
         }
     }
     
-    @objc func newPasswordView(_ sender: UIButton){
-        (sender ).isSelected = !(sender ).isSelected
+    @objc func newPasswordVisibility(_ sender: UIButton){
+        (sender ).isSelected = !(sender).isSelected
         if (sender ).isSelected {
             self.newPassword.isSecureTextEntry = false
-            newButton.setImage(UIImage(named: "visible"), for: .normal)
-            print("show")
+            newButton.setImage(UIImage(named: "VisibleMode"), for: .normal)
+            print("New Password visible")
         } else {
             self.newPassword.isSecureTextEntry = true
-            newButton.setImage(UIImage(named: "invisble"), for: .normal)
-            print("notshow")
+            newButton.setImage(UIImage(named: "InvisibleMode"), for: .normal)
+            print("New Passsword invisible")
         }
     }
     
-    @objc func repeatNewPasswordView(_ sender: UIButton){
-        (sender ).isSelected = !(sender ).isSelected
+    @objc func repeatNewPasswordVisibility(_ sender: UIButton){
+        (sender ).isSelected = !(sender).isSelected
         if (sender ).isSelected {
             self.repeatNewPassword.isSecureTextEntry = false
-            repeatNewButton.setImage(UIImage(named: "visible"), for: .normal)
-            print("show")
+            repeatNewButton.setImage(UIImage(named: "VisibleMode"), for: .normal)
+            print("Repeat new Password visible")
         } else {
             self.repeatNewPassword.isSecureTextEntry = true
-            repeatNewButton.setImage(UIImage(named: "invisble"), for: .normal)
-            print("notshow")
+            repeatNewButton.setImage(UIImage(named: "InvisibleMode"), for: .normal)
+            print("Repeat new Passsword invisible")
         }
     }
     
+    @objc func savePressed(){
+        print("Save tapped")
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     private func passwordSetup(){
-        currentButton.setImage(UIImage(named: "invisble"), for: .normal)
-        currentButton.addTarget(self, action: #selector(passwordView), for: .touchUpInside)
+        currentButton.setImage(UIImage(named: "InvisibleMode"), for: .normal)
+        currentButton.addTarget(self, action: #selector(currentPasswordVisibility), for: .touchUpInside)
         currentPassword.rightView = currentButton
         currentPassword.rightViewMode = .always
         
-        newButton.setImage(UIImage(named: "invisble"), for: .normal)
-        newButton.addTarget(self, action: #selector(newPasswordView), for: .touchUpInside)
+        newButton.setImage(UIImage(named: "InvisibleMode"), for: .normal)
+        newButton.addTarget(self, action: #selector(newPasswordVisibility), for: .touchUpInside)
         newPassword.rightView = newButton
         newPassword.rightViewMode = .always
         
-        repeatNewButton.setImage(UIImage(named: "invisble"), for: .normal)
-        repeatNewButton.addTarget(self, action: #selector(repeatNewPasswordView), for: .touchUpInside)
+        repeatNewButton.setImage(UIImage(named: "InvisibleMode"), for: .normal)
+        repeatNewButton.addTarget(self, action: #selector(repeatNewPasswordVisibility), for: .touchUpInside)
         repeatNewPassword.rightView = repeatNewButton
         repeatNewPassword.rightViewMode = .always
         
         view.addSubview(currentView)
-        currentView.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(15)
-            $0.top.equalToSuperview().inset(100)
-            $0.height.equalTo(50)
+        currentView.snp.makeConstraints {make in
+            make.top.equalToSuperview().inset(100)
+            make.height.equalTo(50)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
         
         currentView.addSubview(currentPassword)
-        currentPassword.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().inset(16)
+        currentPassword.snp.makeConstraints {make in
+            make.top.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(16)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
         
         view.addSubview(newView)
-        newView.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(15)
-            $0.height.equalTo(50)
-            $0.top.equalTo(currentView.snp.bottom).offset(16)
+        newView.snp.makeConstraints {make in
+            make.top.equalTo(currentView.snp.bottom).offset(16)
+            make.height.equalTo(50)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
         
         newView.addSubview(newPassword)
-        newPassword.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().inset(16)
+        newPassword.snp.makeConstraints {make in
+            make.top.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(16)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
         
         view.addSubview(repeatNewView)
-        repeatNewView.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(15)
-            $0.height.equalTo(50)
-            $0.top.equalTo(newView.snp.bottom).offset(16)
+        repeatNewView.snp.makeConstraints {make in
+            make.top.equalTo(newView.snp.bottom).offset(16)
+            make.height.equalTo(50)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
         
         repeatNewView.addSubview(repeatNewPassword)
-        repeatNewPassword.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().inset(16)
+        repeatNewPassword.snp.makeConstraints {make in
+            make.top.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(16)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
 
         view.addSubview(label)
-        label.snp.makeConstraints {
-            $0.top.equalTo(repeatNewView.snp.bottom).offset(32)
-            $0.left.equalToSuperview().inset(135)
-            $0.height.equalTo(22)
+        label.snp.makeConstraints {make in
+            make.top.equalTo(repeatNewView.snp.bottom).offset(32)
+            make.height.equalTo(22)
+            make.left.equalToSuperview().inset(135)
         }
         
         view.addSubview(saveView)
-        saveView.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(16)
-            $0.right.equalToSuperview().inset(15)
-            $0.bottom.equalToSuperview().inset(100)
-            $0.height.equalTo(50)
+        saveView.snp.makeConstraints {make in
+            make.bottom.equalToSuperview().inset(100)
+            make.height.equalTo(50)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().inset(16)
         }
         
         saveView.addSubview(saveButton)
-        saveButton.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(40)
-            $0.right.equalToSuperview().inset(40)
-            $0.top.equalToSuperview().inset(12)
-            $0.bottom.equalToSuperview().inset(12)
+        saveButton.snp.makeConstraints {make in
+            make.top.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview().inset(12)
+            make.left.equalToSuperview().inset(40)
+            make.right.equalToSuperview().inset(40)
         }
     }
     

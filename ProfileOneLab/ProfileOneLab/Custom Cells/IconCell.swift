@@ -8,13 +8,14 @@
 import UIKit
 import SnapKit
 
-class IconTableViewCell: UITableViewCell {
-    static let identifier = "IconTableViewCell"
+class IconCell: UITableViewCell {
+    
+    static let identifier = "IconCell"
     
     let label: UILabel = {
        let label = UILabel()
        label.font = UIFont(descriptor: UIFontDescriptor(name: "Montserrat", size: 16), size: 16)
-       label.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
+       label.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
        return label
    }()
     
