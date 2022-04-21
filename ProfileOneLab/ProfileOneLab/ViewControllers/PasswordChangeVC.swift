@@ -112,7 +112,7 @@ class PasswordChangeVC: UIViewController {
         button.setTitle("Сохранить", for: .normal)
         button.setTitleColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont(name: "Montserrat", size: 20)
-        button.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
+        button.addTarget(PasswordChangeVC.self, action: #selector(savePressed), for: .touchUpInside)
         return button
     }()
     

@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         return view
     }()
     
-    lazy var datePicker: UIDatePicker = {
+    let datePicker: UIDatePicker = {
         let date = UIDatePicker()
         date.preferredDatePickerStyle = UIDatePickerStyle.wheels
         date.timeZone = NSTimeZone.local
