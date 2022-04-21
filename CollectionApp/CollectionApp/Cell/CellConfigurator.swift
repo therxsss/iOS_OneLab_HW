@@ -1,11 +1,10 @@
 //
 //  CellConfigurator.swift
-//  Homework 2
+//  CollectionApp
 //
-//  Created by Lidiya Karnaukhova on 20.04.2022.
+//  Created by Abdurakhman on 17.04.2022.
 //
 
-import Foundation
 import UIKit
 
 protocol CellConfigurator {

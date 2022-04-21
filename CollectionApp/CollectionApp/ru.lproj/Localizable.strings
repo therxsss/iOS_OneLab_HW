@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  CollectionApp
+
+  Created by Abdurakhman on 17.04.2022.
+  
+*/
+
+"My Friends" = "Мои Друзья";
+"Retail Supervisor" = "Супервайзер торговли";
+"Photographer" = "Фотограф";
+"UI/UX Designer" = "UI/UX Дизайнер";
+"Model, Actress" = "Модель, Актриса";
+"Taxi Driver" = "Водитель Такси";
+"Company CEO" = "Глава компании";
+"Mobile Developer" = "Мобильный разработчик";
+"From Contacts" = "Из Контактов";
+"By Username" = "По имени пользователя";
+"By Phone Number" = "По номеру телефона";
+"18 Friends" = "18 Друзей";
+"ADD" = "ДОБАВИТЬ";
+"467 Friends" = "467 Друзей";
+"12.6K Friends" = "12.6К Друзей";
+"1298 Friends" = "1298 Друзей";
+"4.5K Friends" = "4.5К Друзей";
+"489 Friends" = "489 Друзей";
+"ADDED" = "ДОБАВЛЕН";
+"Add New Contacts" = "Добавить новые контакты";
+"You Might Know Them" = "Вы можете их знать";
+"My Feed" = "Лента";
+"My Pins" = "Закрепы";
+"My Profile" = "Профиль";
+"Add New Friend" = "Добавить Нового Друга";

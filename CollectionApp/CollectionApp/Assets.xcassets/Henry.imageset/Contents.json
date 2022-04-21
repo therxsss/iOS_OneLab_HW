@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Снимок экрана 2022-04-19 в 23.01.06.png",
+      "filename" : "henry.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Снимок экрана 2022-04-19 в 23.01.06-1.png",
+      "filename" : "henry-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Снимок экрана 2022-04-19 в 23.01.06-2.png",
+      "filename" : "henry-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

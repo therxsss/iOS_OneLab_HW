@@ -1,8 +1,8 @@
 //
 //  MightKnowTableViewCell.swift
-//  Homework 2
+//  CollectionApp
 //
-//  Created by Lidiya Karnaukhova on 20.04.2022.
+//  Created by Abdurakhman on 17.04.2022.
 //
 
 import UIKit
@@ -43,7 +43,7 @@ class MightKnowTableViewCell: UITableViewCell, ConfigurableCell {
         let friendToggle = UIButton()
         friendToggle.layer.borderWidth = 1.5
         friendToggle.layer.borderColor = CGColor(red: 0, green: 0.478, blue: 1, alpha: 1)
-        friendToggle.addTarget(self, action: #selector(friendTogglePressed), for: .touchUpInside)
+        friendToggle.addTarget(MightKnowTableViewCell.self, action: #selector(friendTogglePressed), for: .touchUpInside)
         return friendToggle
     }()
     
@@ -85,7 +85,7 @@ class MightKnowTableViewCell: UITableViewCell, ConfigurableCell {
     }
     
     func configure(data: MightKnow) {
-        profileImage.image = UIImage(named: data.profileImage)
+        profileImage.image = UIImage(named: data.profileImage ?? "Tucker")
         profileStatus.backgroundColor = UIColor(named: data.statusColor)
         profileName.text = data.profileName
         friendsCount.text = data.friendsCount

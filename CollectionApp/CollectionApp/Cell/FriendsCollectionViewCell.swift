@@ -1,12 +1,13 @@
 //
-//  FriendsCollectionViewController.swift
-//  Homework 2
+//  FriendsCollectionViewCell.swift
+//  CollectionApp
 //
-//  Created by Lidiya Karnaukhova on 19.04.2022.
+//  Created by Abdurakhman on 17.04.2022.
 //
 
 import UIKit
 import SnapKit
+
 
 class FriendsCollectionViewCell: UICollectionViewCell {
     static let identifier = "FriendsCollectionCell"
@@ -89,7 +90,4 @@ class FriendsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
 }
