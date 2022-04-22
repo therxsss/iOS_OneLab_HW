@@ -9,16 +9,17 @@ import UIKit
 
 class TableDirector: NSObject {
 
-    var newContactsSectionCount = 0
 
     let tableView: UITableView
+    let actionProxy = CellActionProxy()
+    var newContactsSectionCount = 0
+    
+    
     var items = [CellConfigurator]() {
         didSet {
             self.tableView.reloadData()
         }
     }
-
-    let actionProxy = CellActionProxy()
 
     init(tableView: UITableView, items: [CellConfigurator]) {
         self.tableView = tableView
