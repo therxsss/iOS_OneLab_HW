@@ -38,9 +38,9 @@ class NewContactsTableViewCell: UITableViewCell, ConfigurableCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(data: NewContactOption) {
-        icon.image = UIImage(systemName: data.iconTitle)
-        button.setTitle(data.buttonTitle, for: .normal)
+    func configure(model: NewContactOption) {
+        icon.image = UIImage(systemName: model.iconTitle)
+        button.setTitle(model.buttonTitle, for: .normal)
     }
     
     private func layoutUI() {

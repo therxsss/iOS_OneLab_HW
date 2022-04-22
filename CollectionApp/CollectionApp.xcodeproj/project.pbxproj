@@ -29,7 +29,10 @@
 		B5FBCDE82818B6F50039FF72 /* MyFriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCDE72818B6F50039FF72 /* MyFriendsDataSource.swift */; };
 		B5FBCDEB2818B7780039FF72 /* AddNewFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCDEA2818B7780039FF72 /* AddNewFriendViewModel.swift */; };
 		B5FBCDED2818B7880039FF72 /* MyFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCDEC2818B7880039FF72 /* MyFriendsViewModel.swift */; };
-		B5FBCDF12818BF240039FF72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5FBCDF32818BF240039FF72 /* Localizable.strings */; };
+		B5FBCDF62818CDD50039FF72 /* Cell Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCDF52818CDD50039FF72 /* Cell Action.swift */; };
+		B5FBCDF82818CE120039FF72 /* Cell Action Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCDF72818CE120039FF72 /* Cell Action Proxy.swift */; };
+		B5FBCDFA2818CF820039FF72 /* TableDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBCDF92818CF820039FF72 /* TableDirector.swift */; };
+		B5FBCDFD2818D1610039FF72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5FBCDFF2818D1610039FF72 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +61,11 @@
 		B5FBCDE72818B6F50039FF72 /* MyFriendsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsDataSource.swift; sourceTree = "<group>"; };
 		B5FBCDEA2818B7780039FF72 /* AddNewFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewModel.swift; sourceTree = "<group>"; };
 		B5FBCDEC2818B7880039FF72 /* MyFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewModel.swift; sourceTree = "<group>"; };
-		B5FBCDF22818BF240039FF72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B5FBCDF42818BF760039FF72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5FBCDF52818CDD50039FF72 /* Cell Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell Action.swift"; sourceTree = "<group>"; };
+		B5FBCDF72818CE120039FF72 /* Cell Action Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell Action Proxy.swift"; sourceTree = "<group>"; };
+		B5FBCDF92818CF820039FF72 /* TableDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDirector.swift; sourceTree = "<group>"; };
+		B5FBCDFE2818D1610039FF72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5FBCE002818D1690039FF72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF8CA8A4FEF86FCE8806508E /* Pods-CollectionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectionApp.release.xcconfig"; path = "Target Support Files/Pods-CollectionApp/Pods-CollectionApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,10 +125,11 @@
 				B5FBCDE92818B7590039FF72 /* ViewModel */,
 				B5FBCDD92818B4BF0039FF72 /* Cell */,
 				B5FBCDE42818B6930039FF72 /* Data Source */,
+				B5FBCDF92818CF820039FF72 /* TableDirector.swift */,
 				B5FBCDB22812FAED0039FF72 /* Assets.xcassets */,
 				B5FBCDB42812FAED0039FF72 /* LaunchScreen.storyboard */,
 				B5FBCDB72812FAED0039FF72 /* Info.plist */,
-				B5FBCDF32818BF240039FF72 /* Localizable.strings */,
+				B5FBCDFF2818D1610039FF72 /* Localizable.strings */,
 			);
 			path = CollectionApp;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 				B5FBCDDE2818B5520039FF72 /* FriendsCollectionViewCell.swift */,
 				B5FBCDE02818B6150039FF72 /* MightKnowTableViewCell.swift */,
 				B5FBCDE22818B6430039FF72 /* NewContactsTableViewCell.swift */,
+				B5FBCDF52818CDD50039FF72 /* Cell Action.swift */,
+				B5FBCDF72818CE120039FF72 /* Cell Action Proxy.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -250,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5FBCDB62812FAED0039FF72 /* LaunchScreen.storyboard in Resources */,
-				B5FBCDF12818BF240039FF72 /* Localizable.strings in Resources */,
+				B5FBCDFD2818D1610039FF72 /* Localizable.strings in Resources */,
 				B5FBCDB32812FAED0039FF72 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,14 +315,17 @@
 			files = (
 				B5FBCDC82818B20C0039FF72 /* AddNewFriendVC.swift in Sources */,
 				B5FBCDE62818B6D10039FF72 /* AddNewFriendsDataSource.swift in Sources */,
+				B5FBCDF62818CDD50039FF72 /* Cell Action.swift in Sources */,
 				B5FBCDE82818B6F50039FF72 /* MyFriendsDataSource.swift in Sources */,
 				B5FBCDAA2812FAEB0039FF72 /* AppDelegate.swift in Sources */,
 				B5FBCDE12818B6150039FF72 /* MightKnowTableViewCell.swift in Sources */,
+				B5FBCDFA2818CF820039FF72 /* TableDirector.swift in Sources */,
 				B5FBCDEB2818B7780039FF72 /* AddNewFriendViewModel.swift in Sources */,
 				B5FBCDE32818B6430039FF72 /* NewContactsTableViewCell.swift in Sources */,
 				B5FBCDDB2818B4D00039FF72 /* CellConfigurator.swift in Sources */,
 				B5FBCDCE2818B2BD0039FF72 /* MyPinsVC.swift in Sources */,
 				B5FBCDD02818B2E10039FF72 /* MyProfileVC.swift in Sources */,
+				B5FBCDF82818CE120039FF72 /* Cell Action Proxy.swift in Sources */,
 				B5FBCDD62818B3A40039FF72 /* MightKnow.swift in Sources */,
 				B5FBCDDD2818B4DF0039FF72 /* ConfigurableCell.swift in Sources */,
 				B5FBCDCC2818B28B0039FF72 /* MyFeedVC.swift in Sources */,
@@ -337,11 +349,11 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		B5FBCDF32818BF240039FF72 /* Localizable.strings */ = {
+		B5FBCDFF2818D1610039FF72 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B5FBCDF22818BF240039FF72 /* en */,
-				B5FBCDF42818BF760039FF72 /* ru */,
+				B5FBCDFE2818D1610039FF72 /* en */,
+				B5FBCE002818D1690039FF72 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

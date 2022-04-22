@@ -9,7 +9,7 @@
 protocol ConfigurableCell {
     associatedtype DataType
     static var reuseIdentifier: String { get }
-    func configure(data: DataType)
+    func configure(model: DataType)
 }
 
 extension ConfigurableCell {

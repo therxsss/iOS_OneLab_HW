@@ -13,88 +13,93 @@ class MightKnowTableViewCell: UITableViewCell, ConfigurableCell {
 
     typealias DataType = MightKnow
     static let identifier = "MightKnowTableCell"
+    static let didTapButtonAction = "UserCellDidTapButtonAction"
     
-    private let profileImage: UIImageView = {
+    
+    let profileImage: UIImageView = {
         let profileImage = UIImageView()
         return profileImage
     }()
     
-    private let profileStatus: UIView = {
+    let profileStatus: UIView = {
         let profileStatus = UIView()
         profileStatus.layer.borderWidth = 2
         profileStatus.layer.borderColor = CGColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return profileStatus
     }()
     
-    private let profileName: UILabel = {
+    let profileName: UILabel = {
         let profileName = UILabel()
         profileName.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         return profileName
     }()
     
-    private let friendsCount: UILabel = {
+    let friendsCount: UILabel = {
         let friendsCount = UILabel()
         friendsCount.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         friendsCount.textColor = UIColor.systemGray
         return friendsCount
     }()
     
-    private let friendToggle: UIButton = {
+    let friendToggle: UIButton = {
         let friendToggle = UIButton()
         friendToggle.layer.borderWidth = 1.5
         friendToggle.layer.borderColor = CGColor(red: 0, green: 0.478, blue: 1, alpha: 1)
-        friendToggle.addTarget(MightKnowTableViewCell.self, action: #selector(friendTogglePressed), for: .touchUpInside)
+        friendToggle.addTarget(MightKnowTableViewCell.self, action: #selector(didTapButton), for: .touchUpInside)
         return friendToggle
     }()
     
-    private let friendToggleLabel: UILabel = {
+    let friendToggleLabel: UILabel = {
         let friendToggleLabel = UILabel()
         friendToggleLabel.textColor = .systemBlue
         friendToggleLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         return friendToggleLabel
     }()
     
-    private let friendToggleImage: UIImageView = {
+    let friendToggleImage: UIImageView = {
         let friendToggleImage = UIImageView()
         friendToggleImage.tintColor = .systemBlue
         return friendToggleImage
     }()
     
-    private lazy var stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [friendToggleImage, friendToggleLabel])
         stackView.axis = .horizontal
         stackView.spacing = 2
         return stackView
     }()
     
-    @objc private func friendTogglePressed() {
-        friendToggleImage.image = UIImage(systemName: "checkmark.circle.fill")
-        friendToggleLabel.text = NSLocalizedString("ADDED", comment: "")
-        friendToggleLabel.textColor = .lightGray
-        friendToggleImage.tintColor = .lightGray
-        friendToggle.layer.borderColor = CGColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.33)
-    }
+    @objc private func didTapButton() {
+            CellAction.custom(type(of: self).didTapButtonAction).invoke(cell: self)
+        }
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutUI()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(data: MightKnow) {
-        profileImage.image = UIImage(named: data.profileImage ?? "Tucker")
-        profileStatus.backgroundColor = UIColor(named: data.statusColor)
-        profileName.text = data.profileName
-        friendsCount.text = data.friendsCount
-        friendToggleLabel.text = data.friendToggleLabel
-        friendToggleImage.image = UIImage(systemName: data.friendToggleImage)
-    }
-    
+    // MARK: - layoutSubviews
     override func layoutSubviews() {
         super.layoutSubviews()
+        configureCorners()
+    }
+    
+    func configure(model: MightKnow) {
+        profileImage.image = UIImage(named: model.profileImage!)
+        profileStatus.backgroundColor = UIColor(named: model.statusColor)
+        profileName.text = model.profileName
+        friendsCount.text = model.friendsCount
+        friendToggleLabel.text = model.friendToggleLabel
+        friendToggleImage.image = UIImage(systemName: model.friendToggleImage)
+    }
+
+    private func configureCorners(){
         profileImage.layer.cornerRadius = profileImage.bounds.width / 2
         profileImage.clipsToBounds = true
         profileStatus.layer.cornerRadius = profileStatus.bounds.width / 2
