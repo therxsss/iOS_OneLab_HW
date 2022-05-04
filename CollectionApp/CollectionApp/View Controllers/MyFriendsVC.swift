@@ -10,8 +10,7 @@ import UIKit
 class MyFriendsViewController: UIViewController {
     
     let viewModel = MyFriendsViewModel()
-    var friends: [Friend] = []
-    
+
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -19,6 +18,7 @@ class MyFriendsViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground

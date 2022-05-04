@@ -38,7 +38,8 @@ class TableDirector: NSObject {
     }
 }
 
-extension TableDirector: UITableViewDelegate, UITableViewDataSource {
+// MARK: - TableView Delegate & Data Source
+extension TableDirector: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             newContactsSectionCount = items.filter { $0 is NewContactCellConfigurator }.count
@@ -107,3 +108,4 @@ extension TableDirector: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
 }
+
